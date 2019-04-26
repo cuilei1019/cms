@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangqingfeng.cms.dao.UserMapper">
+	<select id="loginUser" resultType="user">
+	
+		select * from user where uname=#{uname};
+	</select>
+
+	<select id="selectFriends" resultType="friend">
+	
+		select * from friend where uid=#{uid};
+	</select>
+	<select id="selectUserById" resultType="user">
+	
+		select * from user where uid=#{uid};
+	</select>
+	<insert id="insertMessage">
+		insert into message values(null,#{m.xx},#{m.uid},#{m.fid},#{m.sdate});
+	
+	</insert>
+</mapper>
